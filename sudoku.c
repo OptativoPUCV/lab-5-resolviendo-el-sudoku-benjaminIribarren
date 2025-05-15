@@ -111,9 +111,8 @@ int is_final(Node* n){
   for(int i = 0; i < 9; i++)
     for(int j = 0; j < 9; j++)
       if(n->sudo[i][j] == 0)
-        return 0;  // aún hay celdas vacías
-
-  return is_valid(n); // si está lleno, debe ser válido
+        return 0;  
+  return NULL; 
 }
 
 Node* DFS(Node* inicial, int* contador){
