@@ -139,3 +139,18 @@ test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous 
     7 | char * _strdup(const char * str) {
       |        ^~~~~~~
 0cecd3a
+Thu, May 15, 2025  1:16:03 PM: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:123:10: error: implicit declaration of function 'isEmpty'; did you mean 'is_empty'? [-Wimplicit-function-declaration]
+  123 |   while(!isEmpty(pila)){
+      |          ^~~~~~~
+      |          is_empty
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+2ee0106

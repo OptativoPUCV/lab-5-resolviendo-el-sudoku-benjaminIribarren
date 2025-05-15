@@ -117,7 +117,7 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* inicial, int* contador){
-  Stack* pila = createpila();
+  Stack* pila = createStack();
   push(pila, inicial);
 
   while(!isEmpty(pila)){
