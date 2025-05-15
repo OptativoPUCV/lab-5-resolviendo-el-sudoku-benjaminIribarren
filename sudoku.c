@@ -47,7 +47,6 @@ int is_valid(Node* n){
   int i, j, k;
   int seen[10];
 
-  // Filas
   for(i = 0; i < 9; i++){
     for(k = 1; k <= 9; k++) seen[k] = 0;
     for(j = 0; j < 9; j++){
@@ -58,7 +57,6 @@ int is_valid(Node* n){
     }
   }
 
-  // Columnas
   for(j = 0; j < 9; j++){
     for(k = 1; k <= 9; k++) seen[k] = 0;
     for(i = 0; i < 9; i++){
@@ -69,12 +67,11 @@ int is_valid(Node* n){
     }
   }
 
-  // Subcuadros 3x3
-  for(int x = 0; x < 9; x += 3){
-    for(int y = 0; y < 9; y += 3){
+  for(int p = 0; p < 9; p += 3){
+    for(int l = 0; l < 9; l += 3){
       for(k = 1; k <= 9; k++) seen[k] = 0;
-      for(i = x; i < x + 3; i++){
-        for(j = y; j < y + 3; j++){
+      for(i = p; i < p + 3; i++){
+        for(j = l; j < l + 3; j++){
           int val = n->sudo[i][j];
           if(val == 0) continue;
           if(seen[val]) return 0;
