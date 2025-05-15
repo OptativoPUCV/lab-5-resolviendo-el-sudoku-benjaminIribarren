@@ -48,3 +48,30 @@ Thu, May 15, 2025  1:10:00 PM:
  tests:  6|2
 total_score: 45/70
 abd8cea
+Thu, May 15, 2025  1:13:54 PM: 
+ sudoku.c | 24 +++++++++++++++++++-----
+ 1 file changed, 19 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:114:17: error: implicit declaration of function 'createpila'; did you mean 'createList'? [-Wimplicit-function-declaration]
+  114 |   Stack* pila = createpila();
+      |                 ^~~~~~~~~~
+      |                 createList
+sudoku.c:114:17: error: initialization of 'Stack *' {aka 'List *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+sudoku.c:117:9: error: implicit declaration of function 'isEmpty'; did you mean 'is_empty'? [-Wimplicit-function-declaration]
+  117 |   while(isEmpty(pila) != NULL){
+      |         ^~~~~~~
+      |         is_empty
+sudoku.c:117:23: warning: comparison between pointer and integer
+  117 |   while(isEmpty(pila) != NULL){
+      |                       ^~
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+sudoku.c: In function 'is_final':
+sudoku.c:111:1: warning: control reaches end of non-void function [-Wreturn-type]
+  111 | }
+      | ^
+3c09933
