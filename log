@@ -119,3 +119,23 @@ test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous 
     7 | char * _strdup(const char * str) {
       |        ^~~~~~~
 c4409eb
+Thu, May 15, 2025  1:15:48 PM: 
+ sudoku.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:120:17: error: implicit declaration of function 'createpila'; did you mean 'createList'? [-Wimplicit-function-declaration]
+  120 |   Stack* pila = createpila();
+      |                 ^~~~~~~~~~
+      |                 createList
+sudoku.c:120:17: error: initialization of 'Stack *' {aka 'List *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+sudoku.c:123:10: error: implicit declaration of function 'isEmpty'; did you mean 'is_empty'? [-Wimplicit-function-declaration]
+  123 |   while(!isEmpty(pila)){
+      |          ^~~~~~~
+      |          is_empty
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+0cecd3a
