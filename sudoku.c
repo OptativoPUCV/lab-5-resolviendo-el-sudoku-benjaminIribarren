@@ -114,7 +114,7 @@ Node* DFS(Node* inicial, int* contador){
   Stack* pila = createpila();
   push(pila, inicial);
 
-  while(isEmpty(pila) != NULL){
+  while(!isEmpty(pila)){
     Node* current = top(pila);
     pop(pila);
     (*contador)++;

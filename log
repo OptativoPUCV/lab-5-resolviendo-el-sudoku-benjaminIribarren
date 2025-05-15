@@ -75,3 +75,27 @@ sudoku.c:111:1: warning: control reaches end of non-void function [-Wreturn-type
   111 | }
       | ^
 3c09933
+Thu, May 15, 2025  1:14:16 PM: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:114:17: error: implicit declaration of function 'createpila'; did you mean 'createList'? [-Wimplicit-function-declaration]
+  114 |   Stack* pila = createpila();
+      |                 ^~~~~~~~~~
+      |                 createList
+sudoku.c:114:17: error: initialization of 'Stack *' {aka 'List *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+sudoku.c:117:10: error: implicit declaration of function 'isEmpty'; did you mean 'is_empty'? [-Wimplicit-function-declaration]
+  117 |   while(!isEmpty(pila)){
+      |          ^~~~~~~
+      |          is_empty
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+sudoku.c: In function 'is_final':
+sudoku.c:111:1: warning: control reaches end of non-void function [-Wreturn-type]
+  111 | }
+      | ^
+c3b6193
