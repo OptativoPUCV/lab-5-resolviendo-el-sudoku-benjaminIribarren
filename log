@@ -24,3 +24,9 @@ sudoku.c:104:5: note: previous definition of 'main' with type 'int(int,  char **
   104 | int main( int argc, char *argv[] ){
       |     ^~~~
 b13039b
+Thu, May 15, 2025 12:58:09 PM: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  3|4
+total_score: 20/70
+ad3ee6c
