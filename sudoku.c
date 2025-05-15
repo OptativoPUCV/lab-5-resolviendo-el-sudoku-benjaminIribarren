@@ -44,9 +44,48 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-    return 1;
-}
+  int i, j, k;
+  int seen[10];
 
+  // Filas
+  for(i = 0; i < 9; i++){
+    for(k = 1; k <= 9; k++) seen[k] = 0;
+    for(j = 0; j < 9; j++){
+      int val = n->sudo[i][j];
+      if(val == 0) continue;
+      if(seen[val]) return 0;
+      seen[val] = 1;
+    }
+  }
+
+  // Columnas
+  for(j = 0; j < 9; j++){
+    for(k = 1; k <= 9; k++) seen[k] = 0;
+    for(i = 0; i < 9; i++){
+      int val = n->sudo[i][j];
+      if(val == 0) continue;
+      if(seen[val]) return 0;
+      seen[val] = 1;
+    }
+  }
+
+  // Subcuadros 3x3
+  for(int x = 0; x < 9; x += 3){
+    for(int y = 0; y < 9; y += 3){
+      for(k = 1; k <= 9; k++) seen[k] = 0;
+      for(i = x; i < x + 3; i++){
+        for(j = y; j < y + 3; j++){
+          int val = n->sudo[i][j];
+          if(val == 0) continue;
+          if(seen[val]) return 0;
+          seen[val] = 1;
+        }
+      }
+    }
+  }
+
+  return 1;
+}
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
@@ -62,9 +101,6 @@ Node* DFS(Node* initial, int* cont){
   return NULL;
 }
 
-
-
-/*
 int main( int argc, char *argv[] ){
 
   Node* initial= read_file("s12a.txt");;
@@ -75,4 +111,4 @@ int main( int argc, char *argv[] ){
   print_node(final);
 
   return 0;
-}*/
+}
